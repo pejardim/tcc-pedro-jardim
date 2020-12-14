@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                 blurRadius: 5,
                 spreadRadius: 2)
           ],
-          color: Colors.brown),
+          color: Colors.black),
       child: Text(
         'Entrar como convidado',
         style: TextStyle(fontSize: 20, color: Colors.white),
@@ -118,7 +118,8 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _facebookButton() {
+  Widget _googleButton() {
+    //TODO: ver se vale a pena adicionar inicialmente
     return Container(
       height: 50,
       margin: EdgeInsets.symmetric(vertical: 20),
@@ -199,18 +200,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _title() {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(text: 'Mercado', children: [
-        TextSpan(
-          text: 'Tera',
-          style: TextStyle(color: Colors.black, fontSize: 30),
-        ),
-      ]),
-    );
-  }
-
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
@@ -254,10 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontSize: 14, fontWeight: FontWeight.w500)),
                   ),
                   _divider("ou"),
-                  _facebookButton(),
-                  // _divider("ou"),
-                  // _guestLoginButton(),
-                  SizedBox(height: height * .033),
+                  _guestLoginButton(),
                   _createAccountLabel(),
                 ],
               ),
